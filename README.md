@@ -44,7 +44,7 @@ The verb to use is `git`. This assumes you have the git-bash command line tool a
 * `-p` or `--password` (Optional) - The optional password to use for authentication when cloning the git repo (only works with non-ssh URLs)
 * `-s` or `--use-ssh` (Optional) - Uses the SSH version of the git URL (Defaults to `false`)
 * `-w` or `--working-directory` (Optional) - The working directory to use for the clone command. (Defaults to the users temp directory)
-* `-v` or `--preserve-working-directory` (Optional) - A boolean flag indicating whether (`true`) or not (`false`) to clean up the working directory after the command has finished. (Defaults to `false`
+* `-v` or `--preserve-working-directory` (Optional) - A boolean flag indicating whether (`true`) or not (`false`) to clean up the working directory after the command has finished. (Defaults to `false`)
 
 Note: You either specify the `--url` option or the `--owner` and `--repo` options, if both are specified, the `--url` option takes precedence. 
 If neither are specified an error will be thrown.
@@ -70,7 +70,7 @@ var traverser = new FileTraverser(dir)
 	//Whether or not to include whitespace lines in the count
 	.WithIncludeWhitespace(true)
 	//Whether or not to ignore lines that only contain brackets, parantheses, or braces 
-	.WithIgnoreBrakcets()
+	.WithIgnoreBrackets()
 	//Include some default rules that exclude images, .git and .github directories
 	.WithDefaultRules();
 
