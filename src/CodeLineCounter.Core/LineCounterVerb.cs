@@ -1,9 +1,10 @@
 ﻿namespace CodeLineCounter.Core;
 
-using Ignore = Ignore.Ignore;
-
 using Base;
 
+/// <summary>
+/// Represents the options for the line counter verb
+/// </summary>
 [Verb("lines", true, HelpText = "Counts the number of lines in the given source code")]
 public class LineCounterVerbOptions
 {
@@ -29,10 +30,22 @@ public class LineCounterVerbOptions
     public bool LogOps { get; set; }
 }
 
+/// <summary>
+/// The verb used for counting all of the lines in a given directory or file
+/// </summary>
 public class LineCounterVerb : BooleanVerb<LineCounterVerbOptions>
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="logger"></param>
     public LineCounterVerb(ILogger<LineCounterVerb> logger) : base(logger) { }
 
+    /// <summary>
+    /// Counts all of the lines in the given configuration
+    /// </summary>
+    /// <param name="options">The configuration options</param>
+    /// <returns>Whether or not the operation was successful</returns>
     public override async Task<bool> Execute(LineCounterVerbOptions options)
     {
         if (string.IsNullOrEmpty(options.Path))
