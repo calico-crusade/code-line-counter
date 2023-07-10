@@ -13,9 +13,9 @@ public readonly struct CounterPath
     private readonly CacheItem<string> _windows;
 
     /// <summary>
-    /// The cache item for the linux file path
+    /// The cache item for the unix file path
     /// </summary>
-    private readonly CacheItem<string> _linux;
+    private readonly CacheItem<string> _unix;
 
     /// <summary>
     /// The cache item for the local file path
@@ -48,9 +48,9 @@ public readonly struct CounterPath
     public readonly string Windows => _windows;
 
     /// <summary>
-    /// The path with the correct directory separator for Linux
+    /// The path with the correct directory separator for unix operating systems
     /// </summary>
-    public readonly string Linux => _linux;
+    public readonly string Unix => _unix;
 
     /// <summary>
     /// The path with the correct directory separator for the current OS
@@ -82,7 +82,7 @@ public readonly struct CounterPath
         Path = path;
         Type = type;
         _windows = new(() => FixDirectoryPath(path, type, '\\'));
-        _linux = new(() => FixDirectoryPath(path, type, '/'));
+        _unix = new(() => FixDirectoryPath(path, type, '/'));
         _local = new(() => FixDirectoryPath(path, type));
         _filename = new(GetFileName);
         _extension = new(GetExtension);

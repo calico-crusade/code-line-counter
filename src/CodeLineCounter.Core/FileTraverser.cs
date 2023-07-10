@@ -170,14 +170,14 @@ public class FileTraverser : IFileTraverser
             path,
             path.Relative(InputPath)
         }
-            .Select(t => t.Linux)
+            .Select(t => t.Unix)
             .Where(t => !string.IsNullOrEmpty(t));
 
         if (path.Type == FileType.File)
         {
             var dir = Path.GetDirectoryName(path.Local);
             if (!string.IsNullOrEmpty(dir))
-                paths = paths.Append(new CounterPath(dir, FileType.Directory).Linux);
+                paths = paths.Append(new CounterPath(dir, FileType.Directory).Unix);
         }
 
         if (paths.Any(_ignores.IsIgnored))
