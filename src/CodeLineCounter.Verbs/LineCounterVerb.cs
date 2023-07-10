@@ -90,7 +90,8 @@ public class LineCounterVerb : BooleanVerb<LineCounterVerbOptions>
         var traverser = new FileTraverser(options.Path)
             .WithLogger(options.LogOps ? _logger : null)
             .WithIncludeWhitepsace(options.IncludeWhiteSpace)
-            .WithIgnoreRule(options.Ignore.ToArray());
+            .WithIgnoreRule(options.Ignore.ToArray())
+            .WithDefaultRules();
 
         if (!options.IncludeBracketLines)
             traverser.WithIgnoreBrackets();
