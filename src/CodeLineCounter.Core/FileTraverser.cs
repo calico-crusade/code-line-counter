@@ -81,6 +81,12 @@ public interface IFileTraverser
     IFileTraverser WithIgnoreRule(params string[] rules);
 
     /// <summary>
+    /// Adds some default rules to exclude images, fonts, and some common directories
+    /// </summary>
+    /// <returns></returns>
+    IFileTraverser WithDefaultRules();
+
+    /// <summary>
     /// Loads the given ignore file paths
     /// </summary>
     /// <param name="files">The ignore file paths to load</param>
@@ -317,6 +323,15 @@ public class FileTraverser : IFileTraverser
     {
         _ignores.Add(rules);
         return this;
+    }
+
+    /// <summary>
+    /// Adds some default rules to exclude images, fonts, and some common directories
+    /// </summary>
+    /// <returns></returns>
+    public IFileTraverser WithDefaultRules()
+    {
+        return WithIgnoreRule(".git/", ".angular/", ".github/", "*.gif", "*.png", "*.jpg", "*.jpeg", "*.webp", "*.ico", "*.ttf", "*.data");
     }
 
     /// <summary>

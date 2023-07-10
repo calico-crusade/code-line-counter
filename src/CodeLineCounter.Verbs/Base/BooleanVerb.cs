@@ -1,4 +1,4 @@
-﻿namespace CodeLineCounter.Core.Base;
+﻿namespace CodeLineCounter.Verbs.Base;
 
 /// <summary>
 /// Represents a verb that returns a boolean result

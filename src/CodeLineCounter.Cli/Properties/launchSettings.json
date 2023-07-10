@@ -2,7 +2,7 @@
   "profiles": {
     "CodeLineCounter.Cli": {
       "commandName": "Project",
-      "commandLineArgs": "lines -p \"F:\\Projects\\cardboardbox\" -l true -i \".git/\",\".github/\",\".angular/\",\"*.gif\",\"*.png\",\"*.jpg\",\"*.jpeg\",\"*.webp\",\"*.ico\",\"*.ttf\",\"*.data\""
+      "commandLineArgs": "git --owner calico-crusade --repo code-line-counter"
     }
   }
 }

@@ -1,18 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<OutputType>Exe</OutputType>
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
-	
+
+	<ItemGroup>
+		<ProjectReference Include="..\CodeLineCounter.Core\CodeLineCounter.Core.csproj" />
+	</ItemGroup>
+
 	<ItemGroup>
 		<Compile Include="./../global.cs" />
 	</ItemGroup>
-	
-	<ItemGroup>
-	  <ProjectReference Include="..\CodeLineCounter.Verbs\CodeLineCounter.Verbs.csproj" />
-	</ItemGroup>
-
 </Project>
